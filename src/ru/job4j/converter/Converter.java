@@ -13,9 +13,25 @@ public class Converter {
     }
 
     public static void main(String[] args) {
-        int euro = Converter.rubleToEuro(140);
-        System.out.println("140 rubles are " + euro + " euro.");
-        int dollar = Converter.rubleToDollar(1400);
-        System.out.println("1400 rubles are " + dollar + " dollar.");
+        int in = 140;
+        int expected = 2;
+        int out = rubleToEuro(in);
+        boolean passed = expected == out;
+        System.out.println("140 rubles are 2E. Test result : " + passed);
+        in = 1340;
+        expected = 19;
+        out = rubleToEuro(in);
+        passed = expected == out;
+        System.out.println("1340 rubles are 19E. Test result : " + passed);
+        in = 140;
+        expected = 2;
+        out = rubleToDollar(in);
+        passed = expected == out;
+        System.out.println("140 rubles are 2D. Test result : " + passed);
+        in = 1240;
+        expected = 20;
+        out = rubleToDollar(in);
+        passed = expected == out;
+        System.out.println("1240 rubles are 20D. Test result : " + passed);
     }
 }
