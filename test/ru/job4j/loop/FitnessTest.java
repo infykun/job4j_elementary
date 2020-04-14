@@ -20,7 +20,7 @@ public class FitnessTest {
 
     @Test
     public void whenIvanLessByFewNik() {
-        int month = Fitness.calc(50, 90);
+        int month = Fitness.calc(60, 90);
         assertThat(month, is(2));
     }
 }
