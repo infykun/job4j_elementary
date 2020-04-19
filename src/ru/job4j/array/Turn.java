@@ -2,10 +2,10 @@ package ru.job4j.array;
 
 public class Turn {
     public static int[] back(int[] array) {
-        for (int index = 0; index < array.length / 2; index++) {
-            int temp = array[index];
-            array[index] = array[array.length - index - 1];
-            array[array.length - index - 1] = temp;
+        for (int i = 0; i < array.length / 2; i++) {
+            int tmp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = tmp;
         }
         return array;
     }
