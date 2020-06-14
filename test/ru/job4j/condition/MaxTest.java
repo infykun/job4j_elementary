@@ -30,4 +30,19 @@ public class MaxTest {
         int result = Max.max(4, 2);
         assertThat(result, is(4));
     }
+    @Test
+    public void whenMax3d1() {
+        int result = Max.max(4, 2, 8);
+        assertThat(result, is(8));
+    }
+    @Test
+    public void whenMax3d2() {
+        int result = Max.max(4, 15, 8);
+        assertThat(result, is(15));
+    }
+    @Test
+    public void whenMax4d1() {
+        int result = Max.max(4, 15, 8, 18);
+        assertThat(result, is(18));
+    }
 }
