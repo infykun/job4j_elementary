@@ -24,7 +24,6 @@ public class Converter {
         int rsl = value / 60; // формула перевода рублей в доллоры.
         return rsl;
     }
-
     public static void main(String[] args) {
         int in = 140;
         int expected = 2;

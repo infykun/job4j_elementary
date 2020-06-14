@@ -19,7 +19,6 @@ public class Merge {
         }
         return rsl;
     }
-
     public static void main(String[] args) {
         Merge process = new Merge();
         int[] rsl = process.merge(
