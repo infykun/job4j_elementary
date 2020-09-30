@@ -34,7 +34,7 @@ public class Tracker {
         Item[] itemsByName = new Item[items.length];
         int size = 0;
         for (int i = 0; i < items.length; i++) {
-            if (items[i].getName() == key) {
+            if (items[i].getName().equals(key)) {
                 itemsByName[size] = items[i];
                 size++;
             }
@@ -53,7 +53,9 @@ public class Tracker {
     }
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
-        if (index == -1) return false;
+        if (index == -1) {
+            return false;
+        }
         item.setId(id);
         items[index] = item;
         return true;
