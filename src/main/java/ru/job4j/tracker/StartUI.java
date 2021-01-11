@@ -61,26 +61,13 @@ public class StartUI {
         }
     }
 
-    public void init(Input input, Tracker tracker) {
+    public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
             this.showMenu();
-            int select = Integer.valueOf(input.askStr("Select: "));
-            if (select == 0) {
-                StartUI.createItem(input, tracker);
-            } else if (select == 1) {
-                StartUI.showallitem(input, tracker);
-            } else if (select == 2) {
-                StartUI.edititem(input, tracker);
-            } else if (select == 3) {
-                StartUI.deleteitem(input, tracker);
-            } else if (select == 4) {
-                StartUI.finditembyid(input, tracker);
-            } else if (select == 5) {
-                StartUI.finditembyname(input, tracker);
-            } else if (select == 6) {
-                run = false;
-            }
+            int select = input.askInt("Select: ");
+            UserAction action = actions[select];
+            run = action.execute(input, tracker);
         }
     }
 
@@ -99,6 +86,9 @@ public class StartUI {
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        new StartUI().init(input, tracker);
+        UserAction[] actions = {
+                new CreateAction(), new ShowallAction(), new EditAction(), new DeleteAction(), new FindByIdAction(), new FindByNameAction(), new ExitAction()
+        };
+        new StartUI().init(input, tracker, actions);
     }
 }
