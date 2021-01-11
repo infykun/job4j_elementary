@@ -19,7 +19,23 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() + "0. Exit program" + System.lineSeparator()
+                "Menu." + System.lineSeparator() +  "0. Exit program" + System.lineSeparator()
+        ));
+    }
+    @Test
+    public void whenFindAll() {
+        Output out = new StubOutput();
+        Output out3 = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"0"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new ShowallAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is(
+                "Menu." + System.lineSeparator() + "0. Show all items" + System.lineSeparator() + "1. Exit program" + System.lineSeparator()
         ));
     }
 }
