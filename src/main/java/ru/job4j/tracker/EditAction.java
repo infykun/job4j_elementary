@@ -20,9 +20,9 @@ public class EditAction implements UserAction {
         Item item = new Item(name);
         boolean rsl = tracker.replace(id, item);
         if (rsl) {
-            System.out.println("Item edited success");
+            out.println("Item edited success");
         } else {
-            System.out.println("Item edit failed");
+            out.println("Item edit failed");
         }
         return true;
     }

@@ -31,7 +31,8 @@ public class StartUI {
         UserAction[] actions = {
                 new CreateAction(output),
                 new ExitAction(),
-                new ShowallAction(output)
+                new ShowallAction(output),
+                new FindByNameAction(output)
                 /* another actions */
         };
         new StartUI(output).init(input, tracker, actions);
