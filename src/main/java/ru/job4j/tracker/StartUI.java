@@ -27,10 +27,9 @@ public class StartUI {
             out.println(index + ". " + actions[index].name());
         }
     }
-
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
-        Input input = new ValidateInput();
+        Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(output),
@@ -40,7 +39,6 @@ public class StartUI {
                 new FindByNameAction(output),
                 new ShowallAction(output),
                 new ExitAction()
-                /* another actions */
         };
         new StartUI(output).init(input, tracker, actions);
     }
